@@ -38,4 +38,21 @@ router.get("/celebrities/:id", (req, res, next) => {
   })
 });
 
+router.post("/celebrities", (req, res, next) => {
+  const {name, occupation, catchphrase} = req.body;
+  Celebrity.create({
+		name: name,
+		occupation: occupation,
+		catchphrase: catchphrase
+	})
+	.then(newCeleb => {
+		console.log(newCeleb);
+		// redirect / render the detail view for this book
+		//res.render('bookDetails', { book: createdBook });
+		// doesnt get arguments cause its like writing it directly in the browser
+		// redirects to the new page instead of rendering the book I had
+		res.redirect(`/celebrities/${newCeleb._id}`);
+	})
+	.catch(err => next(err));
+});
 module.exports = router;
