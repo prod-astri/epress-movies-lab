@@ -1,9 +1,12 @@
 <h2>Celebrity Infos </h2>
-<h3>all the dirty details</h3>
+<h3>All The Dirty Details</h3>
 {{#with celebrity}}
 
 		<p>{{name}}</p>
-		<p>{{occupation}}</p>
+		<small>{{occupation}}</small>
 		<p><i>"{{catchphrase}}"</i></p>
-	    
+
+<a href="/celebrities/{{_id}}/delete">Make {{name}} a mere mortal again </a> or
+<a href="/celebrities/{{_id}}/edit">Tell us more about {{name}}. We truly care! </a>
+
 {{/with}}
