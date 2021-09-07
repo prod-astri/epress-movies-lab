@@ -1,0 +1,21 @@
+<h2>Movie Infos </h2>
+<h3>All The Juicy Details</h3>
+		
+{{#with movie}}
+
+		<p>Title: {{ title }}</p>
+		<p>Genre :{{ genre }}</p>
+		<p><i>Plot: "{{ plot }}"</i></p>
+		
+        <p> CAST: </p>
+		<ul>
+			{{#each cast }}
+				<li>{{name}}</li>
+			{{/each }}
+		</ul>
+		
+
+{{!-- <a href="/celebrities/{{_id}}/delete">Make {{name}} a mere mortal again </a> or --}}
+
+<a href="/movies/{{_id}}/edit">Add info about {{ title }}.</a>
+{{/with}}

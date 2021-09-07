@@ -1,0 +1,9 @@
+<h2>Movies index </h2>
+<h3>Here you finde the best moving pictures</h3>
+{{#each moviesList}}
+<a href="/movies/{{_id}}">
+		<p>{{title}}</p>
+	    </a>
+{{/each}}
+
+<h6><a href="/movies/new">add a new movie!</a></h6>
